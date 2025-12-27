@@ -215,7 +215,8 @@ const Home = () => {
           <p data-aos="fade-up" className="f-12">
             A privacy-focused messaging application that allows users to receive
             anonymous feedback. Implemented real-time features and SEO
-            optimization to appear in Google search results.
+            optimization to appear in Google search results. <br />
+            Try sending me a <a style={{textDecoration: 'none'}} href="https://whisperin.gt.tc/u/EADAUV" target="_blank"> <span className="blue">Whisper</span></a>.
           </p>
           <ul className="ps-1 f-10 mb-1" style={{ listStyle: "none" }}>
             <span className="d-block mb-1">This project features - </span>
@@ -235,7 +236,7 @@ const Home = () => {
               </li>
             ))}
           </ul>
-          <div className="d-flex gap-2" data-aos="fade-up">
+          <div className="d-flex gap-2 align-items-center" data-aos="fade-up">
             <a href={projectData.whisperin.liveLink} target="_blank">
               <button className="px-2 f-12 fw-bold" style={{ color: "purple" }}>
                 Try WhisperIn
