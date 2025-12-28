@@ -11,6 +11,7 @@ import {
   SiFramer,
   SiGit,
 } from "react-icons/si";
+import ResumeButtons from "../components/ResumeButtons";
 
 const About = () => {
   const { isDark } = useTheme();
@@ -83,6 +84,7 @@ const About = () => {
           React patterns while seeking opportunities to contribute to meaningful
           projects.
         </p>
+        <ResumeButtons />
         <div className=" mt-5 mb-2 d-flex align-items-center gap-3">
           <i className="fa-solid fa-code blue" style={{ fontSize: 40 }}></i>
           <h3 className="fw-bold text-secondary">My Development Ethos</h3>

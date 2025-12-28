@@ -2,6 +2,7 @@ import { useTheme } from "../context/useTheme";
 import TypingAnimation from "../components/TypingAnimation";
 import Socials from "../components/Socials";
 import MessageBox from "../components/MessageBox";
+import ResumeButtons from "../components/ResumeButtons";
 import {
   SiHtml5,
   SiCss3,
@@ -184,6 +185,7 @@ const Home = () => {
                   Next.js • TypeScript • Advanced React Patterns
                 </span>
               </p>
+              <ResumeButtons />
             </div>
           </div>
         </div>
