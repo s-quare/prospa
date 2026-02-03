@@ -8,7 +8,7 @@ const ResumeButtons = () => {
     <div className="d-flex gap-3">
       <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
         <button
-          className={`bg-secondary px-2 text-white f-10 rounded`}
+          className={`bg-secondary px-3 py-2 text-white f-12 rounded`}
           type="button"
         >
           <i className="fa-solid fa-eye"></i> View Resume
@@ -17,7 +17,7 @@ const ResumeButtons = () => {
 
       <a href={resumeUrl} download="Ebube_Prosper_Resume.pdf">
         <button
-          className={`f-10 px-2 rounded ${isDark ? "bg-blue" : "shadow"}`}
+          className={`f-12 px-3 py-2 rounded ${isDark ? "bg-blue" : "shadow"}`}
           type="button"
         >
           <i className="fa-solid fa-download"></i> Download Resume

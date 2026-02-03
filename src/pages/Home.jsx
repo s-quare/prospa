@@ -12,6 +12,9 @@ import {
   SiTailwindcss,
   SiFramer,
   SiGit,
+  SiNextdotjs,
+  SiFirebase,
+  SiSupabase,
 } from "react-icons/si";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -56,11 +59,12 @@ const Home = () => {
           <h1
             data-aos="fade-up"
             data-aos-delay="500"
-            className={`display-4 fw-bold monospace`}
+            className={`display-5 fw-bolder monospace`}
+            style={{ fontSize: 35 }}
           >
             Prospa
           </h1>
-          <p className={`fw-bold monospace ${!isDark && "text-muted"} `}>
+          <p className={`fw-bolder monospace ${!isDark && "text-muted"} `}>
             <TypingAnimation />
           </p>
         </div>
@@ -77,36 +81,37 @@ const Home = () => {
         className="d-grid px-3"
       >
         <div className={`text-center`}>
-          <p data-aos="fade-up" className="text-secondary f-12 fw-bold">
-            Prospa | Frontend Developer
-          </p>
-          <h1 data-aos="flip-up" className="display-5 fw-bold blue">
-            Building Interactive Experiences That Connect People.
-          </h1>
-          <div data-aos="fade-up">
-            <p className={`px-4 f-10 fw-bold mt-4 ${!isDark && "text-muted"}`}>
-              I transform ideas into interactive web applications using React.
-              Currently focused on creating seamless user experiences while
-              exploring Next.js and modern frontend patterns.
+          <div data-aos="fade-down" data-aos-delay={500}>
+            <p className="text-secondary f-12 fw-bold">
+              Prospa | Frontend Developer
             </p>
-          </div>
-          <div className="d-flex gap-3 w-100 justify-content-center mt-5">
-            <button
-              data-aos="fade-right"
-              data-aos-delay="1000"
-              className="bg-blue f-12 rounded-3"
-              onClick={() => navigate("/projects")}
+            <h1 className="display-5 fw-bold blue">
+              Building Interactive Experiences That Connects People.
+            </h1>
+            <div>
+              <p className={`px-4 f-14 mt-4 ${!isDark && "text-muted"}`}>
+                I transform ideas into interactive web applications using React.
+                Currently focused on creating seamless user experiences while
+                exploring Next.js and modern frontend patterns.
+              </p>
+            </div>
+            <div
+              style={{ gridTemplateColumns: "1fr 1fr", maxWidth: 400 }}
+              className="d-grid mx-auto gap-3 w-100 place-items-center mt-5"
             >
-              Projects
-            </button>
-            <button
-              data-aos="fade-left"
-              data-aos-delay="1000"
-              className="bg-white shadow f-12 rounded-3"
-              onClick={() => navigate("/contact")}
-            >
-              Contact Me
-            </button>
+              <button
+                className="bg-blue f-12 rounded-3"
+                onClick={() => navigate("/projects")}
+              >
+                Projects
+              </button>
+              <button
+                className="bg-white shadow f-12 rounded-3"
+                onClick={() => navigate("/contact")}
+              >
+                Contact Me
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -118,17 +123,15 @@ const Home = () => {
           overflowX: "hidden",
         }}
         className="others"
+        data-aos="fade-in"
+        data-aos-delay={1200}
       >
         {/* About me */}
         <div
           className="d-grid"
           style={{ gridTemplateColumns: "2fr 5fr", gap: 4 }}
         >
-          <div
-            className="d-grid"
-            data-aos="zoom-in"
-            style={{ placeItems: "start center" }}
-          >
+          <div className="d-grid" style={{ placeItems: "start center" }}>
             <img
               src="/images/person.png"
               className="w-75 shadow rounded-pill"
@@ -138,14 +141,8 @@ const Home = () => {
 
           <div className="d-grid" style={{ placeItems: "center" }}>
             <div>
-              <h5 data-aos="fade-up" className="fw-bold">
-                About Me
-              </h5>
-              <p
-                data-aos="fade-up"
-                data-aos-delay={300}
-                className="f-12 fw-bold text-secondary"
-              >
+              <h5 className="fw-bold">About Me</h5>
+              <p className="f-14 text-secondary">
                 <span className="d-block monospace mb-2 f-14">Prospa</span>
                 I'm a frontend developer passionate about creating intuitive web
                 experiences. My approach combines clean code with user-centered
@@ -160,9 +157,7 @@ const Home = () => {
                   More about me
                 </span>
               </p>
-              <p data-aos="fade-left" className="f-16 fw-bold">
-                Skills
-              </p>
+              <p className="f-16 fw-bold">Skills</p>
 
               <div className="d-flex gap-2 flex-wrap">
                 <SiHtml5 title="HTML5" size={20} color="#E34F26" />
@@ -173,54 +168,125 @@ const Home = () => {
                   color="#F7DF1E"
                 />
                 <SiReact title="React" size={20} color="#61DAFB" />
+                <SiNextdotjs
+                  title="Next.js"
+                  size={20}
+                  color={isDark ? "#ffffff" : '"#000000"'}
+                />
+                <SiFirebase title="Firebase" size={20} color="#FFCA28" />
+                <SiSupabase title="Supabase" size={20} color="#3ECF8E" />
                 <SiBootstrap title="Bootstrap" size={20} color="#7952B3" />
                 <SiTailwindcss title="Tailwind" size={20} color="#06B6D4" />
                 <SiFramer title="Framer Motion" size={20} color="#0055FF" />
                 <SiGit title="Git" size={20} color="#F05032" />
               </div>
-
-              <p className="fw-bold my-3 f-10">
-                Currently learning:{" "}
-                <span className="text-secondary">
-                  Next.js • TypeScript • Advanced React Patterns
-                </span>
-              </p>
-              <ResumeButtons />
+              <div className="py-3">
+                <ResumeButtons />
+              </div>
             </div>
           </div>
         </div>
 
         {/* projects */}
 
-        {/* featured project WhisperIn */}
+        {/* Featured project - QRsty */}
         <div className="w-100 px-3 pt-3 fw-bold">
           <h5 className="mb-3 fw-bold f-10 text-secondary">
             <i className="bi bi-collection-fill"></i> Recent Projects
           </h5>
-          <h3 data-aos="fade-up" className="my-2 fw-bold blue">
-            WhisperIn
-          </h3>
-          <p data-aos="fade-up" className="text-secondary f-12 mb-1">
-            <i className="bi bi-chat-dots-fill me-1"></i>
-            Anonymous Messaging Platform
+          <h3 className="my-2 fw-bold blue">QRsty</h3>
+          <p className="text-secondary f-12 mb-1">
+            <i className="bi bi-qr-code-scan me-1"></i>
+            Instant QR Code Builder + Link-in-Bio
           </p>
           <button
             style={{
               backgroundColor: "rgba(70, 130, 180,0.2)",
             }}
-            data-aos="fade-up"
-            className="blue mt-2 mb-3 shadow fw-bold f-10 py-1 px-2 rounded-pill d-flex align-items-center"
+            className="blue mt-2 mb-3 shadow fw-bold f-8 py-1 px-2 rounded-pill d-flex align-items-center"
           >
-            <i className="fa-solid fa-circle f-8 me-1"></i>
+            <i style={{ fontSize: 5 }} className="fa-solid fa-circle me-1"></i>
             <span>Featured Project</span>
           </button>
-          <p data-aos="fade-up" className="f-12">
+          <p className="f-14 fw-normal">
+            A modern full-stack platform to create one-page profiles (socials,
+            shop, menu, events) with instant QR codes and analytics. Supports
+            custom subdomains (e.g. your-slug.qrsty.site), real-time updates,
+            and clean Firebase + Cloudinary backend.
+            <br />
+            Check our my card @{" "}
+            <a
+              style={{ textDecoration: "none" }}
+              href="https://prospa-dev.qrsty.site"
+              target="_blank"
+            >
+              <span className="blue">prospa-dev.qrsty.site</span>
+            </a>
+            .
+          </p>
+          <ul
+            className="ps-1 f-14 fw-normal mb-1"
+            style={{ listStyle: "none" }}
+          >
+            <span className="d-block mb-1">This project features - </span>
+            {[
+              "Instant QR generation",
+              "Custom one-page profiles + analytics",
+              "Public card pages + wildcard subdomains",
+              "Email auth, verification, password reset",
+              "Responsive cyan-themed UI",
+            ].map((item, index) => (
+              <li key={index}>
+                <i className="fa-solid fa-check me-1 blue"></i>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="d-flex gap-2 align-items-center">
+            <a href={projectData.qrsty.liveLink} target="_blank">
+              <button
+                className="px-2 f-12 fw-bold"
+                style={{ color: "darkcyan" }}
+              >
+                Visit QRsty
+              </button>
+            </a>
+            {projectData.qrsty.private ? (
+              <span style={{ fontSize: 12 }}>Private Repo</span>
+            ) : (
+              <a href={projectData.qrsty.gitLink} target="_blank">
+                <button className="blue px-2 f-12 fw-bold">View Code</button>
+              </a>
+            )}
+          </div>
+        </div>
+
+        {/* WhisperIn */}
+        <div className="w-100 px-3 pt-3 fw-bold">
+          <h3 className="my-2 fw-bold blue">WhisperIn</h3>
+          <p className="text-secondary f-12 mb-1">
+            <i className="bi bi-chat-dots-fill me-1"></i>
+            Anonymous Messaging Platform
+          </p>
+          <p className="f-14 fw-normal">
             A privacy-focused messaging application that allows users to receive
             anonymous feedback. Implemented real-time features and SEO
             optimization to appear in Google search results. <br />
-            Try sending me a <a style={{textDecoration: 'none'}} href="https://whisperin.gt.tc/u/EADAUV" target="_blank"> <span className="blue">Whisper</span></a>.
+            Try sending me a{" "}
+            <a
+              style={{ textDecoration: "none" }}
+              href="https://whisperin.gt.tc/u/EADAUV"
+              target="_blank"
+            >
+              {" "}
+              <span className="blue">Whisper</span>
+            </a>
+            .
           </p>
-          <ul className="ps-1 f-10 mb-1" style={{ listStyle: "none" }}>
+          <ul
+            className="ps-1 f-14 fw-normal mb-1"
+            style={{ listStyle: "none" }}
+          >
             <span className="d-block mb-1">This project features - </span>
             {[
               "User Authentication & Profiles",
@@ -228,17 +294,13 @@ const Home = () => {
               "SEO Optimized (Google Indexed)",
               "Responsive React Application",
             ].map((item, index) => (
-              <li
-                data-aos="fade-up"
-                data-aos-delay={(index + 1) * 150}
-                key={index}
-              >
+              <li key={index}>
                 <i className="fa-solid fa-check me-1 blue"></i>
                 <span>{item}</span>
               </li>
             ))}
           </ul>
-          <div className="d-flex gap-2 align-items-center" data-aos="fade-up">
+          <div className="d-flex gap-2 align-items-center">
             <a href={projectData.whisperin.liveLink} target="_blank">
               <button className="px-2 f-12 fw-bold" style={{ color: "purple" }}>
                 Try WhisperIn
@@ -254,20 +316,21 @@ const Home = () => {
 
         {/* tonesFlex */}
         <div className="w-100 px-3 pt-4 fw-bold">
-          <h3 data-aos="fade-up" className="my-2 fw-bold blue">
-            TonesFlex
-          </h3>
-          <p data-aos="fade-up" className="text-secondary f-12 mb-1">
+          <h3 className="my-2 fw-bold blue">TonesFlex</h3>
+          <p className="text-secondary f-12 mb-1">
             <i className="bi bi-chat-dots-fill me-1"></i>
             AI-Powered Mood-to-Music Playlist Curator
           </p>
-          <p data-aos="fade-up" className="f-12">
+          <p className="f-14 fw-normal">
             An intelligent music discovery platform that translates moods,
             keywords, or artists into personalized Spotify playlists. Using
             natural language processing to bridge emotional states with perfect
             musical matches.
           </p>
-          <ul className="ps-1 f-10 mb-1" style={{ listStyle: "none" }}>
+          <ul
+            className="ps-1 f-14 fw-normal mb-1"
+            style={{ listStyle: "none" }}
+          >
             <span className="d-block mb-1">This project features - </span>
             {[
               "Natural Language Mood Interpretation",
@@ -276,11 +339,7 @@ const Home = () => {
               "One-Click Spotify Playlist Export",
               "Responsive Music Discovery Interface",
             ].map((item, index) => (
-              <li
-                data-aos="fade-up"
-                data-aos-delay={(index + 1) * 200}
-                key={index}
-              >
+              <li key={index}>
                 <i className="fa-solid fa-check me-1 blue"></i>
                 <span>{item}</span>
               </li>
@@ -310,14 +369,15 @@ const Home = () => {
 
         <div className="ps-2 mt-4 fw-bold f-12">
           <h4 className="fw-bold blue">Let's work together</h4>
-          <p className="mb-1">
+          <p className="mb-1 fw-normal f-14">
             Interested in building something awesome? I'm down for freelance
             projects and open to new opportunities.
           </p>
-          <ul className="ps-3" style={{ listStyle: "none" }}>
+          <ul className="ps-3 f-14 fw-normal" style={{ listStyle: "none" }}>
             <span className="mb-1">I'm currently available for: </span>
             {[
               "React development projects",
+              "NextJs Full Stack projects",
               "Frontend feature implementation",
               "UI/UX improvements",
               "Collaborative opportunities",
@@ -331,7 +391,7 @@ const Home = () => {
           <p className="mb-1">
             Get in touch to discuss your project or just say hello!
           </p>
-          <div className="d-flex gap-3 f-16 ps-4">
+          <div style={{ fontSize: 20 }} className="d-flex gap-3 ps-4">
             <Socials />
           </div>
           <div

@@ -10,6 +10,9 @@ import {
   SiTailwindcss,
   SiFramer,
   SiGit,
+  SiNextdotjs,
+  SiFirebase,
+  SiSupabase,
 } from "react-icons/si";
 import ResumeButtons from "../components/ResumeButtons";
 
@@ -24,6 +27,9 @@ const About = () => {
     { icon: <SiTailwindcss size={25} color="#06B6D4" />, name: "Tailwind" },
     { icon: <SiFramer size={25} color="#0055FF" />, name: "Framer" },
     { icon: <SiGit size={25} color="#F05032" />, name: "Git" },
+    { icon: <SiNextdotjs size={25} color="#444444" />, name: "Next.js" },
+    { icon: <SiFirebase size={25} color="#FFCA28" />, name: "Firebase" },
+    { icon: <SiSupabase size={25} color="#3ECF8E" />, name: "Supabase" },
   ];
 
   return (
@@ -46,8 +52,8 @@ const About = () => {
           Code.
         </span>
       </h4>
-      <div data-aos="fade-up" data-aos-delay={600}>
-        <p className="f-12">
+      <div data-aos="fade-up" data-aos-delay={1200}>
+        <p className="f-14 fw-normal">
           My entry into frontend development was driven by a fundamental
           curiosity about the architecture of the web, an obsession with how
           granular components converge to form a cohesive digital experience.
@@ -57,19 +63,19 @@ const About = () => {
           My name is Ebube Prosper, and this is the evolution of my craft.
         </p>
         <p className="mb-2 mt-3 f-10 text-secondary">__The path so far</p>
-        <p className="f-12 mb-2">
+        <p className="f-14 fw-normal mb-2">
           Early 2024, Took my first steps into web development, starting with
           HTML/CSS fundamentals and building simple static sites. Discovered
           React and fell in love with component-based architecture. Built
           Synergy Kithause as my first substantial React project to understand
           state management and modern JavaScript. <br />
         </p>
-        <p className="f-12 mb-1">
-          <span className="text-secondary">2025 - Building Solutions. </span>
+        <p className="f-14 fw-normal mb-1">
+          <span className="fw-bold">2025 - Building Solutions. </span>
           Transitioned from learning projects to building applications that
           solve actual needs:
         </p>
-        <ul className="f-12">
+        <ul className="f-14 fw-normal">
           {[
             "Created WhisperIn to address anonymous communication needs",
             "Built TonesFlex to explore API integration creatively",
@@ -78,18 +84,20 @@ const About = () => {
             <li key={index}>{item}</li>
           ))}
         </ul>
-        <p className="f-12">
+        <p className="f-14 fw-normal">
           <span className="text-secondary">Present - Continuous Growth. </span>
           Currently deepening my expertise in Next.js, TypeScript, and advanced
           React patterns while seeking opportunities to contribute to meaningful
           projects.
         </p>
-        <ResumeButtons />
+        <div className="py-2">
+          <ResumeButtons />
+        </div>
         <div className=" mt-5 mb-2 d-flex align-items-center gap-3">
           <i className="fa-solid fa-code blue" style={{ fontSize: 40 }}></i>
           <h3 className="fw-bold text-secondary">My Development Ethos</h3>
         </div>
-        <p className="f-12 max-500">
+        <p className="f-14 fw-normal max-500">
           I believe great software is built at the intersection of logic and
           empathy. Here is the framework I use to bring ideas to life.
         </p>
@@ -144,12 +152,12 @@ const About = () => {
             {[
               [
                 "Core Technologies",
-                "React • JavaScript (ES6+) • HTML5 • CSS3",
+                "Next.Js • React • JavaScript (ES6+) • HTML5 • CSS3",
                 "Modern frameworks and the foundational web technologies that power them.",
               ],
               [
                 "Styling & UI",
-                "CSS Grid • Flexbox • Responsive Design • Bootstrap",
+                "Tailwind CSS, Daisy, Bootstrap",
                 "Creating layouts that work beautifully across all devices and screen sizes.",
               ],
               [
@@ -184,6 +192,7 @@ const About = () => {
                 <span className="fw-bold small">{skill.name}</span>
               </div>
             ))}
+            
             {/* double mapping */}
             {skills.map((skill, index) => (
               <div
@@ -260,7 +269,7 @@ const About = () => {
           <div className="d-flex mb-4 fs-3 gap-3">
             <Socials />
           </div>
-          <p className="mb-2">Or you can leave a message or feedback below</p>
+          <p className="mb-0">Leave a message or feedback below</p>
           <div className="">
             <MessageBox />
           </div>

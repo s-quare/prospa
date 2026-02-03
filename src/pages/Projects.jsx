@@ -5,22 +5,24 @@ const Projects = () => {
   const { projectData, isDark } = useTheme();
 
   return (
-    <div className="px-3" style={{overflowX: 'hidden'}}>
-      <h4  data-aos='fade-up' className="mt-5 text-secondary display-5 mb-4 blue fw-bold">Projects</h4>
-      <p  data-aos='fade-up' className="fw-bold">
+    <div className="px-3" style={{ overflowX: "hidden" }}>
+      <h4 className="mt-5 text-secondary display-5 mb-4 blue fw-bold">
+        Projects
+      </h4>
+      <p className="f-14">
         A collection of projects that showcase my frontend development journey.
-        Each represents a different challenge, from API integration to user
+        Each represents a different challenge, project conception to user
         experience design.
       </p>
-      <p  data-aos='fade-left' className="f-10 text-secondary fw-bold">
-        x4 • React • JavaScript • Modern Web
+      <p data-aos="fade-left" className="f-10 text-secondary fw-bold">
+        x4 • React • Next-Js • JavaScript • Responsive Web
       </p>
       <hr />
 
       <div>
         {Object.values(projectData).map((item) => (
           <div
-           data-aos='fade-up'
+            data-aos="fade-up"
             data-aos-delay={50}
             key={item.id}
             className="d-md-grid mb-5 mt-5 gap-4 pb-5"
@@ -31,26 +33,24 @@ const Projects = () => {
               style={{
                 minHeight: 350,
                 maxWidth: 400,
-                borderRadius: "0 0 15px 20px",
-                backdropFilter: "blur(12px)",
                 backgroundImage: `linear-gradient(to top, ${
                   isDark
-                    ? "rgba(0,0,0,1), rgba(0,0,0,0.4), rgba(0,0,0,0))"
-                    : "rgba(255,255,255,1), rgba(255,255,255,0.1), rgba(255,255,255,0.1), rgba(255,255,255,0))"
+                    ? "rgba(0,0,0,1), rgba(0,0,0,0.4), rgba(0,0,0,0), rgba(0,0,0,0.2), rgba(0,0,0,0.9))"
+                    : "rgba(255,255,255,1), rgba(255,255,255,0.1), rgba(255,255,255,0.1), rgba(255,255,255,0.5))"
                 }, url(/images/${item.id}.png)`,
               }}
             ></div>
             <div className="p-3">
-              <p className="f-10 fw-bold text-secondary mt-2 mb-0">
+              <p className="f-8 fw-bold text-secondary mt-2 mb-1">
                 {item.category}
               </p>
-              <h5 className="fw-bold">{item.name}</h5>
+              <h3 className="fw-bold monospace">{item.name}</h3>
               <p className="blue fw-bold ">{item.tagline}</p>
-              <p className="f-12 fw-bold mb-2">{item.description}</p>
-              <ul className="f-12" style={{ listStyle: "none" }}>
+              <p className="f-14 mb-2">{item.description}</p>
+              <ul className="f-14" style={{ listStyle: "none" }}>
                 <p className="mb-1 fw-bold">Key features</p>
                 {item.keyFeatures.map((feature, index) => (
-                  <li key={index} className="fw-bold f-10">
+                  <li key={index} className="f-12">
                     <i className="bi bi-star blue me-1 "></i>
                     {feature}
                   </li>
@@ -74,8 +74,8 @@ const Projects = () => {
                   </button>
                 ))}
               </div>
-              <p className="f-12 fw-bold mt-2 text-secondary">
-                <span className="blue fw-bold">Drive: </span>
+              <p className="f-14  mt-4 text-secondary">
+                <span className="blue">Drive: </span>
                 {item.impact}
               </p>
               <div className="d-flex gap-3 mt-4">
@@ -84,7 +84,19 @@ const Projects = () => {
                     <i className="bi bi-share f-10 me-1"></i> View Live
                   </button>
                 </a>
-                <a href={item.gitLink} target="_blank">
+                {!item.private ? (
+                  <a href={item.gitLink} target="_blank">
+                    <button
+                      className={`f-12 rounded py-1 px-4 ${
+                        isDark
+                          ? "dark-theme border shadow-light"
+                          : "light-theme shadow"
+                      }`}
+                    >
+                      <i className="bi bi-github me-1"></i> Git Repo
+                    </button>
+                  </a>
+                ) : (
                   <button
                     className={`f-12 rounded py-1 px-4 ${
                       isDark
@@ -92,16 +104,16 @@ const Projects = () => {
                         : "light-theme shadow"
                     }`}
                   >
-                    <i className="bi bi-github me-1"></i> Git Repo
+                    <i className="bi bi-github me-1"></i> Private Repo
                   </button>
-                </a>
+                )}
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      <div  data-aos='fade-up'>
+      <div data-aos="fade-up">
         <p className="fw-bold text-secondary mb-2">Have a project in mind?</p>
         <p className="mb-2">
           I'm always interested in new challenges and opportunities to build
@@ -111,6 +123,7 @@ const Projects = () => {
         <ul className="f-12 fw-bold">
           {[
             "React application development",
+            "Next.Js Full Stack web apps",
             "API integration projects",
             "UI/UX improvements",
             "Frontend architecture",
@@ -128,7 +141,7 @@ const Projects = () => {
         </div>
         <p>You can also leave a message or feedback below</p>
         <div className="pb-5">
-            <MessageBox />
+          <MessageBox />
         </div>
       </div>
     </div>

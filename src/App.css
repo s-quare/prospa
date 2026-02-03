@@ -72,7 +72,7 @@ html {
   user-select: none;
   display: flex;
   gap: 2rem;
-  padding: 15px 5px;
+  padding: 25px 5px;
 }
 
 .marquee-content {
@@ -82,7 +82,7 @@ html {
   align-items: center;
   justify-content: space-around;
   min-width: 100%;
-  animation: scroll-left 20s linear infinite;
+  animation: scroll-left 40s linear infinite;
 }
 
 @keyframes scroll-left {

@@ -11,9 +11,13 @@ const Header = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  useEffect(()=>{
-    scrollTo(0,0)
-  }, [currentPath])
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant", 
+    });
+  }, [currentPath]);
 
   const links = [
     { name: "Home", link: "/" },
@@ -45,12 +49,13 @@ const Header = () => {
           backgroundColor: isDark
             ? "rgba(0,0,0,0.65)"
             : "rgba(255,255,255,0.65)",
+          maxWidth: "500px",
         }}
         className={`${
           isDark ? "shadow-light" : "shadow"
         } position-relative rounded-5 ${
           isDark ? "border-gray" : "border"
-        } fw-bold text-secondary px-3 d-flex align-items-center justify-content-between`}
+        } fw-bold w-100 mx-auto text-secondary px-3 d-flex align-items-center justify-content-between`}
       >
         <span
           style={{ color: isDark ? "steelblue" : "steelblue" }}

@@ -75,14 +75,14 @@ export const ThemeProvider = ({ children }) => {
     whatsapp: {
       name: "WhatsApp",
       key: "+2348084752054",
-      link: "https://wa.me/+2348084752054", // Replace with your link
+      link: "https://wa.me/+2348084752054", 
       iconClass: "bi bi-whatsapp",
       color: "#25D366",
     },
     gmail: {
       name: "Gmail",
       key: "14prospa@gmail.com",
-      link: "mailto:", // Triggers email app
+      link: "mailto:14prospa@gmail.com", 
       iconClass: "bi bi-envelope-at-fill", // Professional email icon
       color: "#DB4437", // Gmail brand Red
     },
@@ -111,6 +111,34 @@ export const ThemeProvider = ({ children }) => {
 
   // infos projectData
   const projectData = {
+    qrsty: {
+      id: "qrsty",
+      name: "QRsty",
+      tagline: "Mini Profile Page Cards & Instant URL - QR converter",
+      description:
+        "QRsty is a full-stack platform that lets users create beautiful, customizable one-page profiles for their socials, shop, menu, events, contact info, and more. It generates instant scannable QR codes with analytics, supports real-time updates, and includes custom subdomains (e.g. prosper.qrsty.site). Built with modern Next.js App Router, Firebase backend, Cloudinary images, and middleware-powered subdomain routing.",
+      keyFeatures: [
+        "Custom single-page profile cards with editable elements",
+        "Instant QR code generation with analytics (views, last visited)",
+        "Public card pages (your-link.qrsty.site) + wildcard subdomains",
+        "Email auth, password reset, account deletion",
+        "Responsive design with cyan-themed UI",
+      ],
+      impact:
+        "Created a clean, privacy-focused alternative to link-in-bio tools like Linktree, with full ownership of links, QR codes, and analytics. Perfect for creators, businesses, events and more.",
+      techStack: [
+        { name: "Next.js", icon: "bi bi-layers-half", color: "gray" },
+        { name: "React", icon: "fab fa-react", color: "steelblue" },
+        { name: "Firebase", icon: "bi bi-fire", color: "orange" },
+        { name: "Cloudinary", icon: "bi bi-cloud", color: "cyan" },
+        { name: "Tailwind CSS", icon: "bi bi-palette", color: "cyan" },
+        { name: "Vercel", icon: "bi bi-cloud-arrow-up", color: "teal" },
+      ],
+      private: true,
+      gitLink: "https://github.com/s-quare/QRsty",
+      liveLink: "https://qrsty.site",
+      category: "Next.Js - Full Stack",
+    },
     whisperin: {
       id: "whisperin",
       name: "WhisperIn",
@@ -280,7 +308,7 @@ export const ThemeProvider = ({ children }) => {
     // 3. Handle Safari / iOS Specifics
     // "black-translucent" makes the status bar text white and blends the background
     let metaSafari = document.querySelector(
-      'meta[name="apple-mobile-web-app-status-bar-style"]'
+      'meta[name="apple-mobile-web-app-status-bar-style"]',
     );
     if (!metaSafari) {
       metaSafari = document.createElement("meta");
@@ -289,7 +317,7 @@ export const ThemeProvider = ({ children }) => {
     }
     metaSafari.setAttribute(
       "content",
-      theme === "dark" ? "black-translucent" : "default"
+      theme === "dark" ? "black-translucent" : "default",
     );
 
     // 4. Optional: Update the body background color to prevent "white flashes"
